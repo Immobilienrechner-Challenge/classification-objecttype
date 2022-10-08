@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+immoscout_cleaned_lat_lon_fixed_v7.csv
