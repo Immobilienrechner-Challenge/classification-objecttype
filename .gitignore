@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 immoscout_cleaned_lat_lon_fixed_v7.csv
+/logistic_classification_old
