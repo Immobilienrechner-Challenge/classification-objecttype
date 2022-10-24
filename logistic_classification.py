@@ -20,15 +20,15 @@ class LogisticClassification:
         self.bias = 0
         for _ in range(self.n_iters):
             y_pred = self.sigmoid(X @ self.weights + self.bias)
-            derivative_cost = self.derivative_loss(y, y_pred)
-            dw, db = self.gradient(X, y_pred, derivative_cost)
+            derivative_loss = self.derivative_loss(y, y_pred)
+            dw, db = self.gradient(X, y_pred, derivative_loss)
             self.update_params(dw, db)
             self.cost_hist.append(self.cost(y, y_pred))
     
 
-    def gradient(self, X, y_pred, derivative_cost):
-        derivative_weights = X.T @ (derivative_cost * y_pred * (1 - y_pred)) / self.n_samples
-        derivative_bias = np.mean(derivative_cost * y_pred * (1 - y_pred)) / self.n_samples
+    def gradient(self, X, y_pred, derivative_loss):
+        derivative_weights = X.T @ (derivative_loss * y_pred * (1 - y_pred)) / self.n_samples
+        derivative_bias = np.mean(derivative_loss * y_pred * (1 - y_pred)) / self.n_samples
         return derivative_weights, derivative_bias
 
 
